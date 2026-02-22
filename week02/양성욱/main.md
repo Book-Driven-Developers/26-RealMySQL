@@ -18,5 +18,8 @@
 
 [3. InnoDB 스토리지 엔진 잠금](https://www.notion.so/3-InnoDB-306483e1832f80b1b4a9fa9345f19796)
 
+[4. MySQL의 격리 수준](https://www.notion.so/4-MySQL-306483e1832f8018a2c1e97a22bae776)
+
+
 
 
