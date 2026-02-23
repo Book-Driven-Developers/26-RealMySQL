@@ -1,0 +1,33 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: chapter5-test-db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${MYSQL_TZ}
+    command:
+      # 락/격리수준 실험 시 보조적으로 유용한 옵션들
+      [
+        "--default-time-zone=+09:00",
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_0900_ai_ci",
+        "--transaction-isolation=REPEATABLE-READ",
+        "--log_bin_trust_function_creators=1",
+        "--performance_schema=ON"
+      ]
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -prootpw --silent" ]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+volumes:
+  mysql_data:
