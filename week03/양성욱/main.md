@@ -25,3 +25,9 @@ MySQL 8.0 버전까지 업그레이드되어 오면서 다른 상용 RDBMS에서
 [6. 함수 기반 인덱스](https://www.notion.so/6-316483e1832f80dbbd87f2aa5f19f152)
 
 [7. 멀티 밸류 인덱스](https://www.notion.so/7-31b483e1832f8003af14f0fa9b7ace6c)
+
+[8. 클러스터링 인덱스](https://www.notion.so/8-31b483e1832f8027a4eed71447b4d4dc)
+
+[9. 유니크 인덱스](https://www.notion.so/9-31b483e1832f80498245dbc1a962fae0)
+
+[10. 외래키](https://www.notion.so/10-31b483e1832f8033933aef620301b17d)
